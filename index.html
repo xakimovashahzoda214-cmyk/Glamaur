@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glamour Beauty Salon</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:linear-gradient(135deg,#ffb6e6,#d9b3ff,#ffc4d9);color:#54104f}
+header{text-align:center;padding:30px 12px;color:white;background:linear-gradient(120deg,#ff0080,#9b00ff,#ff49b5)}
+header h1{font-size:29px;text-shadow:2px 3px 8px #590047}
+header p{font-size:16px}
+nav{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;padding:15px;background:#fff9}
+button{border:0;border-radius:25px;padding:12px 16px;background:linear-gradient(120deg,#ff0080,#9b00ff);color:white;font-weight:bold;cursor:pointer}
+button:hover{filter:brightness(1.08);transform:translateY(-1px)}
+nav button{box-shadow:0 4px 12px #8d00b555}
+main{max-width:1000px;margin:auto;padding:18px}
+section{display:none;background:#ffffffed;border-radius:22px;padding:22px;margin-bottom:20px;box-shadow:0 8px 25px #7a008833}
+section.active{display:block;animation:fade .4s}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+h2{color:#d0008b}
+.hero{text-align:center;padding:28px 12px;color:white;border-radius:20px;background:linear-gradient(135deg,#ff1493,#ad00ff,#ff70b7)}
+.hero h2{color:white;font-size:28px}
+.hero p{line-height:1.7}
+.banner{width:100%;height:220px;object-fit:cover;border-radius:18px;margin:15px 0}
+.stats,.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:14px;margin-top:15px}
+.card,.stat{padding:18px 10px;text-align:center;border-radius:18px;background:linear-gradient(145deg,#ffe4f5,#eee0ff);border:1px solid #f2b5e7}
+.card h3{color:#a000b8}
+.emoji{font-size:38px}
+.price{font-weight:bold;color:#ec008c;font-size:18px}
+input,select{width:100%;padding:14px;margin:6px 0;border:1px solid #df9ad9;border-radius:12px;font-size:15px;background:#fffaff}
+.action{width:100%;margin-top:10px;border-radius:12px;padding:14px;font-size:16px}
+.item{background:#ffedf9;padding:13px;margin-top:10px;border-left:5px solid #e000a0;border-radius:10px;overflow-wrap:anywhere}
+.item button{margin-top:8px}
+.empty{padding:14px;text-align:center;color:#87517f}
+footer{text-align:center;padding:24px 10px;background:linear-gradient(120deg,#9b00ff,#ff0080);color:white}
+@media(max-width:480px){header h1{font-size:24px}main{padding:12px}section{padding:16px}.banner{height:160px}}
+</style>
+</head>
+<body>
+<header>
+  <h1>💖 GLAMOUR BEAUTY SALON 💖</h1>
+  <p>✨ Go‘zalligingiz — bizning san’atimiz! ✨</p>
+</header>
+
+<nav>
+  <button type="button" onclick="show('home')">🏠 Bosh sahifa</button>
+  <button type="button" onclick="show('clients')">👩 Mijozlar</button>
+  <button type="button" onclick="show('services')">💅 Xizmatlar</button>
+  <button type="button" onclick="show('staff')">👩‍💼 Xodimlar</button>
+  <button type="button" onclick="show('booking')">📅 Navbat</button>
+  <button type="button" onclick="show('payments')">💳 To‘lov</button>
+  <button type="button" onclick="show('reports')">📊 Hisobot</button>
+  <button type="button" onclick="show('prices')">💎 Narxlar</button>
+</nav>
+
+<main>
+<section id="home" class="active">
+  <div class="hero">
+    <h2>🌸 Xush kelibsiz! 🌸</h2>
+    <p>O‘zingizga vaqt ajrating.<br>Biz bilan yanada go‘zal bo‘ling!</p>
+    <p>💄 Makeup | 💇 Soch | 💅 Manikyur</p>
+  </div>
+
+  <div class="cards">
+    <div class="card"><div class="emoji">👰</div><h3>Kelin ko‘ylagi</h3><p>Hashamatli kelinlik liboslari</p><div class="price">1 000 000 so‘mdan</div></div>
+    <div class="card"><div class="emoji">💍</div><h3>Diadema va taqinchoqlar</h3><p>Kelin uchun nafis bezaklar</p><div class="price">80 000 so‘mdan</div></div>
+    <div class="card"><div class="emoji">🤵</div><h3>Kuyov kostyumi</h3><p>Ijara uchun zamonaviy kostyumlar</p><div class="price">350 000 so‘mdan</div></div>
+    <div class="card"><div class="emoji">🌸</div><h3>Kelin buketi</h3><p>Bayram uchun chiroyli gullar</p><div class="price">180 000 so‘mdan</div></div>
+    <div class="card"><div class="emoji">👑</div><h3>Fata va kelin bezaklari</h3><p>Turli xil kelinlik aksessuarlari</p><div class="price">100 000 so‘mdan</div></div>
+    <div class="card"><div class="emoji">📸</div><h3>Kelinlik fotosessiyasi</h3><p>Unutilmas kun uchun suratlar</p><div class="price">400 000 so‘mdan</div></div>
+    <div class="card"><div class="emoji">👠</div><h3>Kelin oyoq kiyimi</h3><p>Bayramona poyabzallar</p><div class="price">200 000 so‘mdan</div></div>
+    <div class="card"><div class="emoji">💐</div><h3>Nikoh bezaklari</h3><p>To‘y uchun nafis dekorlar</p><div class="price">250 000 so‘mdan</div></div>
+  </div>
+
+  <img class="banner" src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1000&q=80" alt="Go‘zallik saloni">
+  <div class="stats">
+    <div class="stat"><div class="emoji">👩</div><h2 id="nc">0</h2>Mijozlar</div>
+    <div class="stat"><div class="emoji">💅</div><h2>6</h2>Xizmatlar</div>
+    <div class="stat"><div class="emoji">📅</div><h2 id="nb">0</h2>Navbatlar</div>
+    <div class="stat"><div class="emoji">💰</div><h2 id="nr">0 so‘m</h2>Tushum</div>
+  </div>
+</section>
+
+<section id="clients">
+  <h2>👩 Mijozlar</h2>
+  <form id="cf">
+    <input id="cn" placeholder="Mijoz ismi" required>
+    <input id="cp" type="tel" placeholder="Telefon raqami" required>
+    <button class="action">➕ Mijoz qo‘shish</button>
+  </form>
+  <div id="cl"></div>
+</section>
+
+<section id="services">
+  <h2>💅 Bizning xizmatlarimiz</h2>
+  <div class="cards" id="serviceCards"></div>
+</section>
+
+<section id="staff">
+  <h2>👩‍💼 Xodimlar</h2>
+  <form id="sf">
+    <input id="sn" placeholder="Xodim ismi" required>
+    <select id="sr"><option>Stilist</option><option>Vizajist</option><option>Manikyur ustasi</option><option>Kosmetolog</option><option>Administrator</option></select>
+    <button class="action">➕ Xodim qo‘shish</button>
+  </form>
+  <div id="sl"></div>
+</section>
+
+<section id="booking">
+  <h2>📅 Navbatga yozilish</h2>
+  <form id="bf">
+    <input id="bn" placeholder="Mijoz ismi" required>
+    <input id="bp" type="tel" placeholder="Telefon raqami" required>
+    <select id="bs"></select>
+    <input id="bd" type="date" required>
+    <input id="bt" type="time" required>
+    <button class="action">📌 Navbatni saqlash</button>
+  </form>
+  <div id="bl"></div>
+</section>
+
+<section id="payments">
+  <h2>💳 To‘lovlar</h2>
+  <form id="pf">
+    <input id="pn" placeholder="Mijoz ismi" required>
+    <select id="ps"></select>
+    <select id="pm"><option>Naqd pul</option><option>Plastik karta</option><option>Click / Payme</option></select>
+    <button class="action">✅ To‘lovni qayd etish</button>
+  </form>
+  <div id="pl"></div>
+</section>
+
+<section id="reports">
+  <h2>📊 Hisobotlar</h2>
+  <div class="stat"><div class="emoji">💰</div><h2 id="rr">0 so‘m</h2>Jami tushum</div>
+  <div class="stat"><div class="emoji">🧾</div><h2 id="rp">0</h2>To‘lovlar soni</div>
+</section>
+
+<section id="prices">
+  <h2>💎 Narxlar ro‘yxati</h2>
+  <div id="pr"></div>
+</section>
+</main>
+
+<footer>
+  <h2>💖 GLAMOUR BEAUTY SALON 💖</h2>
+  <p>Go‘zallik har bir ayolga yarashadi! 🌷</p>
+  <p>© 2026</p>
+</footer>
+
+<script>
+const prices = {
+  "Manikyur":80000,
+  "Soch turmagi":100000,
+  "Makeup":150000,
+  "Yuz parvarishi":120000,
+  "Soch bo‘yash":200000,
+  "Qosh dizayni":50000,
+  "Kelin makiyaji":300000,
+  "Kelin soch turmagi":250000,
+  "Kelin ko‘ylagi ijarasi":500000,
+  "Kelin ko‘ylagi sotib olish":2500000,
+  "Kuyov kostyumi ijarasi":350000,
+  "Fata":100000,
+  "Diadema":80000,
+  "Kelin buketi":180000,
+  "Taqinchoqlar to‘plami":120000,
+  "Kelin oyoq kiyimi":200000,
+  "Kelinlik fotosessiyasi":400000,
+  "Nikoh uchun bezaklar":250000
+};
+
+const $ = id => document.getElementById(id);
+let clients = [], staff = [], bookings = [], payments = [];
+
+function show(id) {
+  document.querySelectorAll('main section').forEach(section => section.classList.remove('active'));
+  const target = $(id);
+  if (target) target.classList.add('active');
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function money(n) {
+  return Number(n || 0).toLocaleString('uz-UZ') + ' so‘m';
+}
+
+function saveData() {
+  try {
+    localStorage.setItem('glamourSalonData', JSON.stringify({clients,staff,bookings,payments}));
+  } catch (error) {
+    console.warn('Ma’lumotni saqlash imkoni bo‘lmadi:', error);
+  }
+}
+
+function loadData() {
+  try {
+    const saved = JSON.parse(localStorage.getItem('glamourSalonData') || '{}');
+    clients = Array.isArray(saved.clients) ? saved.clients : [];
+    staff = Array.isArray(saved.staff) ? saved.staff : [];
+    bookings = Array.isArray(saved.bookings) ? saved.bookings : [];
+    payments = Array.isArray(saved.payments) ? saved.payments : [];
+  } catch (error) {
+    clients = []; staff = []; bookings = []; payments = [];
+  }
+}
+
+function renderList(containerId, items, makeText, removeItem) {
+  const container = $(containerId);
+  container.innerHTML = '';
+  if (!items.length) {
+    container.innerHTML = '<div class="empty">Hozircha ma’lumot yo‘q.</div>';
+    return;
+  }
+  items.forEach((item, index) => {
+    const row = document.createElement('div');
+    row.className = 'item';
+    const text = document.createElement('div');
+    text.textContent = makeText(item);
+    const del = document.createElement('button');
+    del.type = 'button';
+    del.textContent = '🗑 O‘chirish';
+    del.addEventListener('click', () => {
+      if (!confirm('Ushbu ma’lumotni o‘chirmoqchimisiz?')) return;
+      removeItem(index);
+      saveData();
+      renderAll();
+    });
+    row.append(text, del);
+    container.appendChild(row);
+  });
+}
+
+function renderAll() {
+  renderList('cl', clients, c => c.name + ' — ' + c.phone, i => clients.splice(i,1));
+  renderList('sl', staff, s => '👩‍💼 ' + s.name + ' — ' + s.role, i => staff.splice(i,1));
+  renderList('bl', bookings, b => '📅 ' + b.name + ' | ' + b.service + ' | ' + b.date + ' ' + b.time, i => bookings.splice(i,1));
+  renderList('pl', payments, p => '💳 ' + p.name + ' — ' + money(p.amount) + ' (' + p.service + ', ' + p.method + ')', i => payments.splice(i,1));
+
+  const total = payments.reduce((sum,p) => sum + Number(p.amount || 0), 0);
+  $('nc').textContent = clients.length;
+  $('nb').textContent = bookings.length;
+  $('nr').textContent = money(total);
+  $('rr').textContent = money(total);
+  $('rp').textContent = payments.length;
+}
+
+function fillSelects() {
+  $('bs').innerHTML = '';
+  $('ps').innerHTML = '';
+  Object.entries(prices).forEach(([name, amount]) => {
+    const bookingOption = document.createElement('option');
+    bookingOption.value = name;
+    bookingOption.textContent = name;
+    $('bs').appendChild(bookingOption);
+
+    const paymentOption = document.createElement('option');
+    paymentOption.value = String(amount);
+    paymentOption.textContent = name + ' — ' + money(amount);
+    paymentOption.dataset.service = name;
+    $('ps').appendChild(paymentOption);
+  });
+}
+
+function renderServicesAndPrices() {
+  const services = [
+    ['💅','Manikyur','Chiroyli tirnoqlar'],
+    ['💇‍♀️','Soch turmagi','Zamonaviy obraz'],
+    ['💄','Makeup','Bayramona pardoz'],
+    ['🧖‍♀️','Yuz parvarishi','Yuz parvarishi'],
+    ['🎨','Soch bo‘yash','Yangi ranglar'],
+    ['✨','Qosh dizayni','Chiroyli shakl']
+  ];
+  $('serviceCards').innerHTML = '';
+  services.forEach(([emoji,name,description]) => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    const icon = document.createElement('div'); icon.className = 'emoji'; icon.textContent = emoji;
+    const title = document.createElement('h3'); title.textContent = name;
+    const desc = document.createElement('p'); desc.textContent = description;
+    const price = document.createElement('div'); price.className = 'price'; price.textContent = money(prices[name]);
+    card.append(icon,title,desc,price);
+    $('serviceCards').appendChild(card);
+  });
+
+  $('pr').innerHTML = '';
+  Object.entries(prices).forEach(([name,amount]) => {
+    const row = document.createElement('div');
+    row.className = 'item';
+    row.textContent = name + ' — ' + money(amount);
+    $('pr').appendChild(row);
+  });
+}
+
+$('cf').addEventListener('submit', e => {
+  e.preventDefault();
+  clients.push({name:$('cn').value.trim(), phone:$('cp').value.trim()});
+  saveData(); renderAll(); e.target.reset();
+});
+
+$('sf').addEventListener('submit', e => {
+  e.preventDefault();
+  staff.push({name:$('sn').value.trim(), role:$('sr').value});
+  saveData(); renderAll(); e.target.reset();
+});
+
+$('bf').addEventListener('submit', e => {
+  e.preventDefault();
+  bookings.push({
+    name:$('bn').value.trim(),
+    phone:$('bp').value.trim(),
+    service:$('bs').value,
+    date:$('bd').value,
+    time:$('bt').value
+  });
+  saveData(); renderAll(); e.target.reset();
+});
+
+$('pf').addEventListener('submit', e => {
+  e.preventDefault();
+  const selected = $('ps').selectedOptions[0];
+  payments.push({
+    name:$('pn').value.trim(),
+    amount:Number(selected.value),
+    service:selected.dataset.service,
+    method:$('pm').value
+  });
+  saveData(); renderAll(); e.target.reset();
+});
+
+loadData();
+fillSelects();
+renderServicesAndPrices();
+renderAll();
+</script>
+</body>
+</html>'''
+
+path = Path("/mnt/data/glamour_beauty_salon_fixed.html")
+path.write_text(html, encoding="utf-8")
+print(f"HTML tayyor: {path}")
